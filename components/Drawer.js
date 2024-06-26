@@ -20,7 +20,7 @@ function Drawer () {
                         return( 
                             <Ionicons name='list-outline' size={ 30 } style={{ paddingLeft: 10}}
                                 onPress={() => {
-                                    navigation.openDrawer()                          
+                                    navigation.openDrawer() //this a comment                           
                                 }}
                             />
                         )
