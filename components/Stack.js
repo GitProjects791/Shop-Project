@@ -3,10 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Order from '../Screens/Order' 
 import Home from '../Screens/Home'
 
-import Drawer from './Drawer'
 import { Ionicons } from '@expo/vector-icons'
 
-import Random from '../Screens/random'
 
 const Stack = createNativeStackNavigator();
 

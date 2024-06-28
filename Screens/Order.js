@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { StyleSheet, View, Text, Button, KeyboardAvoidingView, Dimensions, Platform } from 'react-native'
+import { ReactNode, useState, useEffect } from 'react'
+import { StyleSheet, View, KeyboardAvoidingView, Dimensions, Platform } from 'react-native'
 
 import { TextInput } from 'react-native-paper'
 
@@ -15,10 +15,10 @@ function Order ({ navigation }) {
     }, [ navigation ])
     
     return (
-        <View style={{ flexDirection:'column', flex: 1, borderWidth: 3, borderColor: 'black' }}>
+        <View style={{ flexDirection:'column', flex: 1, borderTopWidth: 2 }}>
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={[ styles.tContainer ,{ marginTop: winDimensions.height/2 - useHeaderHeight() - 2*winDimensions.height*1/18 } ]} >
-                <TextInput style={ styles.tInput } placeholder='Hello'/>
-                <TextInput style={ styles.tInput } placeholder='Hello'/>
+                <TextInput style={ styles.tInput } placeholder='Hello' label="hello" right={ <TextInput.Icon icon='eye' /> } />
+                <TextInput style={ styles.tInput } placeholder='Hello' label="hello" right={ <TextInput.Icon icon='eye' /> } />            
             </KeyboardAvoidingView>
         </View>
     )
@@ -27,14 +27,10 @@ function Order ({ navigation }) {
 
 export default Order
 
-// newest fucking one
-
 const styles = StyleSheet.create({
     tContainer: {  
         flex:1/2,
-        borderWidth: 3,
-        borderColor: 'black',
-       
+
         justifyContent: 'space-around',
     },
 
@@ -42,10 +38,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         
         width: winDimensions.width* 3/4,
-        height: winDimensions.height * 1/18,
-
-        textAlign: 'center',
-
-
+        height: winDimensions.height * 1/18
     }
 })
