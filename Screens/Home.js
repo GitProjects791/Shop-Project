@@ -12,34 +12,16 @@ import
 } 
 from "react-native";
 
+import { Shops } from '../Data';
+
 const bgImage = require('../assets/background.png');
- 
-const shops = [ 
-    { 
-        name: "Rashid's Shop",
-        type:"Grocer"
-    },
-    {
-        name: "Pavan's Shop",
-        type: "grocer"
-    },
-    
-    {
-        name: "Pharmacist",
-        type: "Parmacy"
-    },
-    {
-        name:'Barber',
-        type: 'Barbing'
-    },
-]
 
 function Home ( { navigation } ) {
     return (
         <ImageBackground source={bgImage} style={ styles.bg }> 
             <ScrollView  contentContainerStyle={{ alignItems:'center' }}>
                 {  
-                    shops.map((element) => {
+                    Shops.map((element) => {
                         return(
                             <TouchableOpacity key={ element.name } style={styles.widgets.body}onPress={() => navigation.navigate("logIn")}>
                                 <Text style={ styles.widgets.text }>{ element.name }</Text>
