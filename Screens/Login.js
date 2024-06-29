@@ -8,7 +8,7 @@ import { useHeaderHeight } from '@react-navigation/elements';
 const winDimensions = Dimensions.get('window')
 
 
-function Order ({ navigation }) {
+function logIn ({ navigation }) {
     useEffect(() => {
         navigation.getParent('Drawer').setOptions({ SwipeEnabled: false })
         
@@ -21,11 +21,12 @@ function Order ({ navigation }) {
                 <TextInput style={ styles.tInput } placeholder='Hello' label="hello" right={ <TextInput.Icon icon='eye' /> } />            
             </KeyboardAvoidingView>
         </View>
-    )
+    ) 
+
     
 }
 
-export default Order
+export default logIn
 
 const styles = StyleSheet.create({
     tContainer: {  

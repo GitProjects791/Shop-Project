@@ -41,7 +41,7 @@ function Home ( { navigation } ) {
                 {  
                     shops.map((element) => {
                         return(
-                            <TouchableOpacity key={ element.name } style={styles.widgets.body}onPress={() => navigation.navigate("Order")}>
+                            <TouchableOpacity key={ element.name } style={styles.widgets.body}onPress={() => navigation.navigate("logIn")}>
                                 <Text style={ styles.widgets.text }>{ element.name }</Text>
                                 <Text style={ styles.widgets.text }>{ element.type }</Text>
                                 <Button title="Detes" color="#841584"  />
