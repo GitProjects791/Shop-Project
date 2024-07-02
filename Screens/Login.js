@@ -1,13 +1,8 @@
 import {  useState, useEffect } from 'react'
 import { StyleSheet, View, KeyboardAvoidingView, Dimensions, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native'
 
-import { Ionicons } from '@expo/vector-icons'
+import LoginInputs from '../components/LoginInputs'
 
-import { TextInput } from 'react-native-paper'
-
-import { signIn } from '../Data'
-
-console.log(signIn)
 
 const winDimensions = Dimensions.get('window')
 
@@ -21,10 +16,7 @@ function Login ({ navigation }) {
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={ styles.tContainer } >
             <TouchableWithoutFeedback onPress={ Keyboard.dismiss }>
-                <View style={{ flex: 1, justifyContent: 'space-around'}}>
-                    <TextInput mode='outlined' placeholder='Hello' style={ styles.tInput }  label="Email"  left={ <TextInput.Icon icon={ () => <Ionicons name='mail-outline' size={ 30 } /> } /> } />
-                    <TextInput mode='outlined' placeholder='Hello' style={ styles.tInput }  label="Pasword" left={ <TextInput.Icon icon={ () => <Ionicons name='eye' size={ 30 } />} /> } /> 
-                </View>
+                <LoginInputs purpose={ navigation.route.params.purpose } />
             </TouchableWithoutFeedback>          
         </KeyboardAvoidingView>
     ) 
