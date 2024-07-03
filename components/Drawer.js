@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { useNavigation } from '@react-navigation/native';
 
 import Profile from '../Screens/Profile'
 import Stack from '../components/Stack'
@@ -9,12 +8,12 @@ import Stack from '../components/Stack'
 import { Ionicons } from '@expo/vector-icons' 
 
 function Drawer () {
-    const DrawerNav = createDrawerNavigator()
+    const Drawer = createDrawerNavigator()
 
     return(
-        <DrawerNav.Navigator id='Drawer' >
-            <DrawerNav.Screen name="Stack" component={ Stack } options={{ headerShown: false }}/>
-            <DrawerNav.Screen name="Profile" component={ Profile } 
+        <Drawer.Navigator id='Drawer' >
+            <Drawer.Screen name="Stack" component={ Stack } options={{ headerShown: false }}/>
+            <Drawer.Screen name="Profile" component={ Profile } 
                 options={ ({ navigation }) => ({
                     headerLeft: () => {
                         return( 
@@ -27,7 +26,7 @@ function Drawer () {
                     }
                 })}
             />
-        </DrawerNav.Navigator>
+        </Drawer.Navigator>
     )
 }
 
