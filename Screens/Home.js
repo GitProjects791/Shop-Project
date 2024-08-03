@@ -14,16 +14,17 @@ from "react-native";
 
 import { Shops } from '../Data';
 
-const bgImage = require('../assets/background.png');
 
 function Home ( { navigation } ) {
+    const bgImage = require('../assets/background.png');
+
     return (
         <ImageBackground source={bgImage} style={ styles.bg }> 
             <ScrollView  contentContainerStyle={{ alignItems:'center' }}>
                 {  
                     Shops.map((element) => {
                         return(
-                            <TouchableOpacity key={ element.name } style={styles.widgets.body}onPress={() => navigation.navigate("logIn")}>
+                            <TouchableOpacity key={ element.name } style={styles.widgets.body}onPress={() => navigation.navigate("Account", { purpose: 'signIn' })}>
                                 <Text style={ styles.widgets.text }>{ element.name }</Text>
                                 <Text style={ styles.widgets.text }>{ element.type }</Text>
                                 <Button title="Detes" color="#841584"  />

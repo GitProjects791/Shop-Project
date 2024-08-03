@@ -22,7 +22,7 @@ export const Account = {
     signIn: [
         {
             label: 'Email',
-            icon: 'email-outline',
+            icon: 'mail-outline',
             placeholder: 'Enter Email'
         },
         {
@@ -36,7 +36,3 @@ export const Account = {
         
     ]
 }
-    
-
-
-export default Data

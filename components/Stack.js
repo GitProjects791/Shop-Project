@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Login from '../Screens/Login' 
+import Account from '../Screens/Account' 
 import Home from '../Screens/Home'
 
 import { Ionicons } from '@expo/vector-icons'
@@ -20,7 +20,7 @@ function StackNav ({ navigation }) {
                     }
                 }}
             />
-            <Stack.Screen name="logIn" component={ Login } />
+            <Stack.Screen name="Account" component={ Account } />
         </Stack.Navigator>
     )
 }
