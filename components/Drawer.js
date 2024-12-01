@@ -5,6 +5,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Profile from '../Screens/Profile'
 import Stack from '../components/Stack'
 
+
 import { Ionicons } from '@expo/vector-icons' 
 
 function Drawer () {
