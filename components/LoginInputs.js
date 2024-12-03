@@ -9,7 +9,7 @@ function LoginInputs ( purpose ) {
 
     return Data.map( () => {
         <View style={{ flex: 1, justifyContent: 'space-around'}}>
-            <TextInput mode='outlined' placeholder={Data.placeholder} style={ styles.tInput }  label= { Data.placeholder }  left={ <TextInput.Icon icon={ () => <Ionicons name={ Data.icon } size={ 30 } /> } /> } />
+            <TextInput key={Data.label} mode='outlined' placeholder={Data.placeholder} style={ styles.tInput }  label= { Data.placeholder }  left={ <TextInput.Icon icon={ () => <Ionicons name={ Data.icon } size={ 30 } /> } /> } />
         </View>
     })
 }
