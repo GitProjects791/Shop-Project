@@ -1,5 +1,5 @@
 import {  useState, useEffect } from 'react'
-import { StyleSheet, View, KeyboardAvoidingView, Dimensions, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { StyleSheet, View, KeyboardAvoidingView, Dimensions, Platform, TouchableWithoutFeedback, Keyboard, ScrollView } from 'react-native'
 
 import { Ionicons } from '@expo/vector-icons'
 
@@ -15,25 +15,21 @@ console.log(Dimensions.get('window').height)
 
 function Login ({ route, navigation }) {
     
-    useEffect(() => {
-       navigation.getParent('Drawer').setOptions({ SwipeEnabled: false })
-        
-    }, [navigation ])
-    
     const Data = Account[route.params.purpose]
 
     return (
         <TouchableWithoutFeedback onPress={ Keyboard.dismiss }>
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={ styles.container } >
-                <View onLayout={ (event)=> {console.log(event.nativeEvent.layout.y)}} style={ [{ marginTop: (winDimensions.height - useHeaderHeight())/9  }, styles.tContainer]}>
-                    {
-                        Data.map((value) => {
-                            return(
-                                <TextInput mode='outlined' placeholder={ value.placeholder } style={ styles.tInput }  label={ value.label }  left={ <TextInput.Icon icon={ () => <Ionicons name={ value.icon } size={ 30 } /> } /> } />
-                            ) 
-                        })
-                    }
-                </View>
+               
+                    <View onLayout={ (event)=> {console.log(event.nativeEvent.layout.y)}} style={ [{ marginTop: (winDimensions.height - useHeaderHeight())/9  }, styles.tContainer]}>
+                        {
+                            Data.map((value) => {
+                                return(
+                                    <TextInput key={value.label} mode='outlined' placeholder={ value.placeholder } style={ styles.tInput }  label={ value.label }  left={ <TextInput.Icon icon={ () => <Ionicons name={ value.icon } size={ 30 } /> } /> } />
+                                ) 
+                            })
+                        }
+                    </View>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>           
 

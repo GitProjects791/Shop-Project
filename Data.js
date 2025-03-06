@@ -33,6 +33,20 @@ export const Account = {
     ],
 
     signUp: [
-        
+        {
+            label: 'Email',
+            icon: 'mail-outline',
+            placeholder: 'Enter Email'
+        },
+        {
+            label: 'Password',
+            icon: 'eye',
+            placeholder: 'Enter Password'
+        },
+        {
+            label: 'Phone No.',
+            icon: 'call-outline',
+            placeholder: 'Enter Phone Number'
+        }
     ]
 }
