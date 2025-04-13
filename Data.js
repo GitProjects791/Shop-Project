@@ -51,9 +51,9 @@ export const Account = {
         },
 
         {
-            label: 'Phone No.',
-            icon: 'call-outline',
-            placeholder: 'Enter Phone Number'
+            label: 'Username',
+            icon: 'person-outline',
+            placeholder: 'Enter Username'
         }
     ]
 }
