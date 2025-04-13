@@ -19,9 +19,10 @@ function Login ({ route, navigation }) {
 
     return (
         <TouchableWithoutFeedback onPress={ Keyboard.dismiss }>
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={ styles.container } >
+            <KeyboardAvoidingView onLayout={ (event)=> {console.log(event.nativeEvent.layout.y)}} behavior='height' style={ styles.container } >
                
-                    <View onLayout={ (event)=> {console.log(event.nativeEvent.layout.y)}} style={ [{ marginTop: (winDimensions.height - useHeaderHeight())/9  }, styles.tContainer]}>
+                <View  style={ [{ marginTop: (winDimensions.height - useHeaderHeight())/9  }, styles.tContainer]}>
+                    <ScrollView  contentContainerStyle={{ flex: 1, justifyContent: 'space-around', height: 10000}}>
                         {
                             Data.map((value) => {
                                 return(
@@ -29,7 +30,8 @@ function Login ({ route, navigation }) {
                                 ) 
                             })
                         }
-                    </View>
+                    </ScrollView>
+                </View>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>           
 
@@ -45,21 +47,21 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth:3,
         flex:1,
-        justifyContent:'space-around'
     },
 
     tContainer: {
-        justifyContent: 'space-around',
+        // justifyContent: 'space-between',
         flex:1,
-        height: winDimensions.height/2,
         borderWidth:3,
-        borderColor: 'red'
+        borderColor: 'red',
+        alignItems: 'center'
     },  
 
     tInput: {
-        alignSelf: 'center',
+       
         
         width: winDimensions.width* 3/4,
+        // height: 70
         // marginTop: 300
     },
 })

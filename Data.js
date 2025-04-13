@@ -43,6 +43,13 @@ export const Account = {
             icon: 'eye',
             placeholder: 'Enter Password'
         },
+        
+        {
+            label: 'Phone No.',
+            icon: 'call-outline',
+            placeholder: 'Enter Phone Number'
+        },
+
         {
             label: 'Phone No.',
             icon: 'call-outline',
