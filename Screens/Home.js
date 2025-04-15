@@ -8,7 +8,8 @@ import
     StyleSheet, 
     ImageBackground,
     ScrollView,
-    Dimensions
+    Dimensions,
+    View
 } 
 from "react-native";
 
@@ -20,11 +21,11 @@ function Home ( { navigation } ) {
 
     return (
         <ImageBackground source={bgImage} style={ styles.bg }> 
-            <ScrollView  contentContainerStyle={{ alignItems:'center' }}>
+            <ScrollView  style={styles.scroller} contentContainerStyle={styles.scrollContainer}>
                 {  
                     Shops.map((element) => {
                         return(
-                            <TouchableOpacity key={ element.name } style={styles.widgets.body}onPress={() => navigation.navigate("Account", { purpose: 'signUp' })}>
+                            <TouchableOpacity key={ element.name } style={styles.widgets.body} onPress={() => navigation.navigate("Account", { purpose: 'signUp' })}>
                                 <Text style={ styles.widgets.text }>{ element.name }</Text>
                                 <Text style={ styles.widgets.text }>{ element.type }</Text>
                                 <Button title="Detes" color="#841584"  />
@@ -51,10 +52,11 @@ const styles = StyleSheet.create({
 
     widgets: {
         body: {
+            flex: 1/7,
             marginTop: 20,
             backgroundColor: "#f6eeee",
-            width: dimensions.width*0.4,
-            height:dimensions.height*0.2,
+            width: dimensions.width*0.9,
+            // height:dimensions.height*0.2,
            
              
             borderRadius: 10,
@@ -67,5 +69,18 @@ const styles = StyleSheet.create({
         text: {
             fontWeight:'bold',
         }
+    },
+
+    scroller: {
+        flex : 1, 
+        borderColor: 'black',
+        borderWidth: 3
+    },
+    
+    scrollContainer: {
+        flex: 1,
+        alignItems:'center',
+        borderColor: 'red',
+        boderWidth: 5
     }
 })

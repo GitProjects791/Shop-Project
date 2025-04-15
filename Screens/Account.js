@@ -20,12 +20,17 @@ function Login ({ route, navigation }) {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             
-            <View style={[styles.container]}>
-                <Text style={styles.signUpText}>
-                    {route.params.purpose === 'signIn' ? 'Sign In' : 'Sign Up'}
-                </Text> 
+            <View style={[styles.container, {borderWidth: 3, borderColor: 'red'}]}>
+                
+                <View style={{ borderWidth: 3, borderColor: 'purple', flex: 1/9}}>
+                    <Text style={styles.signUpText}>
+                        {route.params.purpose === 'signIn' ? 'Sign In' : 'Sign Up'}
+                    </Text>
+                </View>
+                 
                 
                 <KeyboardAwareScrollView 
+                    style={{ borderColor: 'blue', borderWidth: 3, flex:2/3 }}
                     contentContainerStyle={styles.tContainer} 
                     extraScrollHeight={Platform.OS === 'ios' ? 0 : 0}
                     enableOnAndroid={true}
@@ -51,15 +56,16 @@ function Login ({ route, navigation }) {
                             {route.params.purpose === 'signIn' ? 'Sign In' : 'Sign Up'}
                         </Text>
                     </TouchableOpacity>
+                    
+                    <View style={[styles.link.linkContainer, {flex: 1/5, borderWidth: 3, borderColor: 'green'}]}>
+                        <Text style={styles.link.linkText} onPress={() => {
+                            navigation.navigate('Account', { purpose: route.params.purpose === 'signIn' ? 'signUp' : 'signIn' })
+                        }}>
+                            {route.params.purpose === 'signUp' ? 'Already have an account?' : 'Don\'t have an account?' }    
+                        </Text>
+                    </View>
+
                 </KeyboardAwareScrollView>
-                
-                <View style={[styles.link.linkContainer, {flex: 1/4}]}>
-                    <Text style={styles.link.linkText} onPress={() => {
-                        navigation.navigate('Account', { purpose: route.params.purpose === 'signIn' ? 'signUp' : 'signIn' })
-                    }}>
-                        {route.params.purpose === 'signUp' ? 'Already have an account?' : 'Don\t have an account?' }    
-                    </Text>
-                </View>
                 
             </View>
         </TouchableWithoutFeedback>
