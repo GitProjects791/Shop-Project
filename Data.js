@@ -1,20 +1,26 @@
 export const Shops = [ 
     { 
         name: "Rashid's Shop",
-        type:"Grocer"
+        type:"Grocer",
+        icon: "basket-sharp",
+        //add an icon of bag-check or smth similar
+
     },
     {
         name: "Pavan's Shop",
-        type: "grocer"
+        type: "grocer",
+        icon: "bag",
     },
     
     {
         name: "Pharmacist",
-        type: "Parmacy"
+        type: "Parmacy",
+        icon: "medkit",
     },
     {
         name:'Barber',
-        type: 'Barbing'
+        type: 'Barbing',
+        icon: 'cut-sharp',
     },
 ]
 

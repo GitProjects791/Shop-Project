@@ -20,9 +20,9 @@ function Login ({ route, navigation }) {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             
-            <View style={[styles.container, {borderWidth: 3, borderColor: 'red'}]}>
+            <View style={styles.container}>
                 
-                <View style={{ borderWidth: 3, borderColor: 'purple', flex: 1/9}}>
+                <View style={{ flex: 1/9}}>
                     <Text style={styles.signUpText}>
                         {route.params.purpose === 'signIn' ? 'Sign In' : 'Sign Up'}
                     </Text>
@@ -30,7 +30,7 @@ function Login ({ route, navigation }) {
                  
                 
                 <KeyboardAwareScrollView 
-                    style={{ borderColor: 'blue', borderWidth: 3, flex:2/3 }}
+                    style={{ flex:2/3 }}
                     contentContainerStyle={styles.tContainer} 
                     extraScrollHeight={Platform.OS === 'ios' ? 0 : 0}
                     enableOnAndroid={true}
@@ -57,7 +57,7 @@ function Login ({ route, navigation }) {
                         </Text>
                     </TouchableOpacity>
                     
-                    <View style={[styles.link.linkContainer, {flex: 1/5, borderWidth: 3, borderColor: 'green'}]}>
+                    <View style={styles.link.linkContainer}>
                         <Text style={styles.link.linkText} onPress={() => {
                             navigation.navigate('Account', { purpose: route.params.purpose === 'signIn' ? 'signUp' : 'signIn' })
                         }}>
@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
         linkContainer: {
             alignItems: 'center', // Center the link horizontally
             justifyContent: 'center', // Center the link vertically
+            flex:1/5
         },
         linkText: {
             color: '#1E90FF', // Dodger blue for link appearance
