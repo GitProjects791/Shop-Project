@@ -30,7 +30,7 @@ function Login ({ route, navigation }) {
                  
                 
                 <KeyboardAwareScrollView 
-                    style={{ flex:2/3 }}
+                    style={{ flex:2/3}}
                     contentContainerStyle={styles.tContainer} 
                     extraScrollHeight={Platform.OS === 'ios' ? 0 : 0}
                     enableOnAndroid={true}

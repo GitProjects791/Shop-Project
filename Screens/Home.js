@@ -28,13 +28,22 @@ function Home ( { navigation } ) {
                     Shops.map((element) => {
                         return(
                             <TouchableOpacity key={ element.name } style={[styles.widgets.body, Platform.OS == 'ios'? styles.widgets.body.ios : styles.widgets.body.android]} onPress={() => navigation.navigate("Account", { purpose: 'signUp' })}>
-                                <View style={styles.widgets.lContainer}>
-                                    <Ionicons name = {element.icon} size={ 50 } color='black' style={styles.icon} />    
+                                <View style={{ flex: 8/10, flexDirection: 'row'}}>
+                                    <View style={styles.widgets.lContainer}>
+                                        <Ionicons name = {element.icon} size={ 50 } color='black' style={styles.icon} />    
+                                    </View>
+
+                                    <View style={styles.widgets.rContainer}>
+                                        <Text style={styles.widgets.text}>{element.name}</Text>
+                                    </View>
                                 </View>
 
-                                <View style={styles.widgets.rContainer}>
-                                    <Text style={styles.widgets.text}>{element.name}</Text>
+                                <View style={{borderWidth: 3, borderColor: 'red', flex: 2/10}}>
+                                    <TouchableOpacity style={{flex: 7/10, width:'60%', alignSelf: 'center', borderWidth: 3, borderColor:'blue', borderBottomLeftRadius: -5, borderBottomRightRadius: -5}} >
+
+                                    </TouchableOpacity>
                                 </View>
+                                
                             </TouchableOpacity>
                         )
                     }) 
@@ -67,7 +76,7 @@ const styles = StyleSheet.create({
             backgroundColor:'white',
             opacity:1,
 
-            flexDirection:'row',
+            flexDirection:'column',
 
             ios:{
                 
@@ -96,19 +105,17 @@ const styles = StyleSheet.create({
             
             justifyContent:'center',
             
-            // borderWidth: 5,
             borderColor:'blue'
         },
 
         text: {
-            fontWeight: '800',  // Bold, impactful font
-            fontSize: 25,  // Larger size for prominence
-            color: '#000',  // Strong black color for base
-            textTransform: 'first-letter',  // All caps for added strength
-            letterSpacing: '3',  // Spacious text for a refined look
-            fontFamily: 'Poppins, sans-serif',  // Clean, modern sans-serif font
-            alignSelf: 'center',  // Centered for balance
-            
+            fontWeight: '800',
+            fontSize: 25,
+            color: '#000',
+            textTransform: 'first-letter',
+            letterSpacing: '3',
+            fontFamily: 'Poppins, sans-serif',
+            alignSelf: 'center',
         } 
     },
 
